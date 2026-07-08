@@ -3,11 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keeta Qatar — Advertising Rate Card</title>
+    <title>Keeta — Advertising Rate Card</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Landing page specific styles */
+        .landing-hero {
+            padding: 80px 0 60px;
+        }
+        .landing-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .landing-hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .country-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            padding: 32px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .country-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+        .country-flag {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .country-info {
+            flex: 1;
+        }
+        .country-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 4px;
+        }
+        .country-status {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+        .country-status .live {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        .country-arrow {
+            font-size: 1.5rem;
+            color: var(--color-text-muted);
+            transition: var(--transition);
+        }
+        .country-card:hover .country-arrow {
+            color: var(--color-primary);
+            transform: translateX(4px);
+        }
+
+        /* Flag backgrounds */
+        .flag-qat { background: #8B1A1A; color: white; }
+        .flag-sa { background: #1A5F1A; color: white; }
+        .flag-hk { background: #DE2910; color: white; }
+
+        @media (min-width: 768px) {
+            .country-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .landing-hero h1 {
+                font-size: 3rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .country-card {
+                padding: 24px 20px;
+            }
+            .country-flag {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -20,268 +122,52 @@
                 </svg>
                 <span class="logo-text">Keeta</span>
             </div>
-            <div class="header-meta">
-                <span class="badge">Qatar</span>
-            </div>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero landing-hero">
         <div class="container">
             <h1>Advertising Rate Card</h1>
-            <p class="hero-subtitle">Premium ad placements on the Keeta Qatar platform</p>
-            <div class="version-info">
-                <span class="version-badge">Version 1.0.0</span>
-                <span class="publish-date">Published: July 7, 2026</span>
-                <span class="validity-badge">Valid Through: August 31, 2026</span>
-            </div>
+            <p>Premium ad placements on the Keeta platform. Select your market to view the latest pricing and availability.</p>
         </div>
     </section>
 
-    <section class="rate-cards">
+    <section class="rate-cards" style="padding-top: 32px;">
         <div class="container">
-            <div class="cards-grid">
-                <!-- Card 1: App Splash Screen -->
-                <article class="rate-card">
-                    <div class="card-image">
-                        <img src="images/splash-screen.png" alt="App Splash Screen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display:none;">
-                            <span class="placeholder-icon">&#128247;</span>
-                            <span class="placeholder-text">App Splash Screen</span>
-                        </div>
-                        <span class="discount-tag">50% OFF</span>
+            <div class="country-grid">
+                <a href="qat/" class="country-card">
+                    <div class="country-flag flag-qat">QA</div>
+                    <div class="country-info">
+                        <div class="country-name">Qatar</div>
+                        <div class="country-status"><span class="live">● Live</span> — Rate Card v1.0.0</div>
                     </div>
-                    <div class="card-body">
-                        <h2 class="card-title">App Splash Screen</h2>
-                        <div class="card-metrics">
-                            <div class="metric">
-                                <span class="metric-label">Unit Price</span>
-                                <span class="metric-value">QAR 200 <small>(CPM)</small></span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Est. Daily Impressions</span>
-                                <span class="metric-value">370,000</span>
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <div class="original-price">
-                                <span class="price-label">Rate Card</span>
-                                <span class="price-value">QAR 74,000</span>
-                            </div>
-                            <div class="discounted-price">
-                                <span class="price-label">GTM Discounted</span>
-                                <span class="price-value">QAR 37,000</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                    <div class="country-arrow">→</div>
+                </a>
 
-                <!-- Card 2: Homepage Banner 4th -->
-                <article class="rate-card">
-                    <div class="card-image">
-                        <img src="images/homepage-banner-4th.png" alt="Homepage Banner 4th" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display:none;">
-                            <span class="placeholder-icon">&#128247;</span>
-                            <span class="placeholder-text">Homepage Banner 4th</span>
-                        </div>
-                        <span class="discount-tag">50% OFF</span>
+                <div class="country-card" style="opacity: 0.5; cursor: default; pointer-events: none;">
+                    <div class="country-flag flag-sa">SA</div>
+                    <div class="country-info">
+                        <div class="country-name">Saudi Arabia</div>
+                        <div class="country-status">Coming Soon</div>
                     </div>
-                    <div class="card-body">
-                        <h2 class="card-title">Homepage Banner 4th</h2>
-                        <div class="card-metrics">
-                            <div class="metric">
-                                <span class="metric-label">Unit Price</span>
-                                <span class="metric-value">QAR 100 <small>(CPM)</small></span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Est. Daily Impressions</span>
-                                <span class="metric-value">245,000</span>
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <div class="original-price">
-                                <span class="price-label">Rate Card</span>
-                                <span class="price-value">QAR 24,500</span>
-                            </div>
-                            <div class="discounted-price">
-                                <span class="price-label">GTM Discounted</span>
-                                <span class="price-value">QAR 12,250</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                    <div class="country-arrow">—</div>
+                </div>
 
-                <!-- Card 3: Homepage Banner 6th -->
-                <article class="rate-card">
-                    <div class="card-image">
-                        <img src="images/homepage-banner-6th.png" alt="Homepage Banner 6th" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display:none;">
-                            <span class="placeholder-icon">&#128247;</span>
-                            <span class="placeholder-text">Homepage Banner 6th</span>
-                        </div>
-                        <span class="discount-tag">50% OFF</span>
+                <div class="country-card" style="opacity: 0.5; cursor: default; pointer-events: none;">
+                    <div class="country-flag flag-hk">HK</div>
+                    <div class="country-info">
+                        <div class="country-name">Hong Kong</div>
+                        <div class="country-status">Coming Soon</div>
                     </div>
-                    <div class="card-body">
-                        <h2 class="card-title">Homepage Banner 6th</h2>
-                        <div class="card-metrics">
-                            <div class="metric">
-                                <span class="metric-label">Unit Price</span>
-                                <span class="metric-value">QAR 100 <small>(CPM)</small></span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Est. Daily Impressions</span>
-                                <span class="metric-value">50,000</span>
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <div class="original-price">
-                                <span class="price-label">Rate Card</span>
-                                <span class="price-value">QAR 5,000</span>
-                            </div>
-                            <div class="discounted-price">
-                                <span class="price-label">GTM Discounted</span>
-                                <span class="price-value">QAR 2,500</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 4: Push Notification -->
-                <article class="rate-card">
-                    <div class="card-image">
-                        <img src="images/push-notification.png" alt="Push Notification" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display:none;">
-                            <span class="placeholder-icon">&#128247;</span>
-                            <span class="placeholder-text">Push Notification</span>
-                        </div>
-                        <span class="discount-tag">50% OFF</span>
-                    </div>
-                    <div class="card-body">
-                        <h2 class="card-title">Push Notification</h2>
-                        <div class="card-metrics">
-                            <div class="metric">
-                                <span class="metric-label">Unit Price</span>
-                                <span class="metric-value">QAR 100 <small>(CPM)</small></span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Est. Daily Impressions</span>
-                                <span class="metric-value">Audience-Based</span>
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <div class="original-price">
-                                <span class="price-label">Rate Card</span>
-                                <span class="price-value">Audience-Based</span>
-                            </div>
-                            <div class="discounted-price">
-                                <span class="price-label">GTM Discounted</span>
-                                <span class="price-value">50% OFF</span>
-                            </div>
-                        </div>
-                        <p class="card-note">Subject to daily frequency control</p>
-                    </div>
-                </article>
-
-                <!-- Card 5: WhatsApp -->
-                <article class="rate-card">
-                    <div class="card-image">
-                        <img src="images/whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display:none;">
-                            <span class="placeholder-icon">&#128247;</span>
-                            <span class="placeholder-text">WhatsApp</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h2 class="card-title">WhatsApp</h2>
-                        <div class="card-metrics">
-                            <div class="metric">
-                                <span class="metric-label">Unit Price</span>
-                                <span class="metric-value">QAR 0.13 <small>/ send</small></span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Est. Daily Impressions</span>
-                                <span class="metric-value">Audience-Based</span>
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <div class="original-price">
-                                <span class="price-label">Rate Card</span>
-                                <span class="price-value">—</span>
-                            </div>
-                            <div class="discounted-price">
-                                <span class="price-label">GTM Discounted</span>
-                                <span class="price-value">—</span>
-                            </div>
-                        </div>
-                        <p class="card-note">WhatsApp channel cost reference</p>
-                    </div>
-                </article>
+                    <div class="country-arrow">—</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="summary-table-section">
-        <div class="container">
-            <h2 class="section-title">Rate Card Summary</h2>
-            <div class="table-wrapper">
-                <table class="rate-table">
-                    <thead>
-                        <tr>
-                            <th>Ad Slot</th>
-                            <th>Unit Price</th>
-                            <th>Est. Daily Impressions</th>
-                            <th>Rate Card (Daily)</th>
-                            <th>GTM Discounted</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>App Splash Screen</td>
-                            <td>QAR 200 (CPM)</td>
-                            <td>370,000</td>
-                            <td class="strike">QAR 74,000</td>
-                            <td class="highlight">QAR 37,000</td>
-                        </tr>
-                        <tr>
-                            <td>Homepage Banner 4th</td>
-                            <td>QAR 100 (CPM)</td>
-                            <td>245,000</td>
-                            <td class="strike">QAR 24,500</td>
-                            <td class="highlight">QAR 12,250</td>
-                        </tr>
-                        <tr>
-                            <td>Homepage Banner 6th</td>
-                            <td>QAR 100 (CPM)</td>
-                            <td>50,000</td>
-                            <td class="strike">QAR 5,000</td>
-                            <td class="highlight">QAR 2,500</td>
-                        </tr>
-                        <tr>
-                            <td>Push Notification</td>
-                            <td>QAR 100 (CPM)</td>
-                            <td>Audience-Based</td>
-                            <td class="strike">Audience-Based</td>
-                            <td class="highlight">50% OFF</td>
-                        </tr>
-                        <tr>
-                            <td>WhatsApp</td>
-                            <td>QAR 0.13 / send</td>
-                            <td>Audience-Based</td>
-                            <td>—</td>
-                            <td>—</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
+    <footer class="site-footer" style="margin-top: 48px;">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-validity">
-                    <strong>Valid Through: August 31, 2026</strong> — GTM discounted prices are time-bound and subject to this validity period.
-                </p>
                 <p class="footer-contact">For bookings and inquiries, please contact the Keeta Ads team.</p>
                 <p class="footer-copyright">&copy; 2026 Keeta. All rights reserved.</p>
             </div>
